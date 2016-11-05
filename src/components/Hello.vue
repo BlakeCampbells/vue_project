@@ -2,11 +2,10 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+    <ul id='essential_links'>
+      <li v-for="(item, index) in essential_links">
+        <a :href="item.link" target="_blank">{{item.label}}</a>
+      </li>
       <br>
       <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
     </ul>
@@ -25,7 +24,20 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to My Vue.js App',
+      essential_links: [{
+        label: 'Core Docs',
+        link: 'https://twitter.com/vuejs'
+      }, {
+        label: 'Forum',
+        link: 'https://forum.vuejs.org'
+      }, {
+        label: 'Gitter Chat',
+        link: 'https://gitter.im/vuejs/vue'
+      }, {
+        label: 'Twitter',
+        link: 'https://twitter.com/vuejs'
+      }]
     }
   }
 }
