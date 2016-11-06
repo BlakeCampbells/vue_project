@@ -26,7 +26,7 @@ export default {
         name: 'Stuff',
         description: 'Stuff about me in this aspect'
       }, {
-        name: 'shit',
+        name: 'Other Stuff',
         description: 'Stuff about me in this aspect'
       }]
     }
