@@ -2,21 +2,18 @@
   <div id="app">
     <img src="./assets/logo.png">
     <about-me></about-me>
-    <hello></hello>
-    <charts><charts>
+    <examples><examples>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-import Charts from './components/Charts'
+import Examples from './components/Examples'
 import AboutMe from './components/AboutMe'
 
 export default {
   name: 'app',
   components: {
-    Hello,
-    Charts,
+    Examples,
     AboutMe
   }
 }

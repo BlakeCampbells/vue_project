@@ -1,20 +1,12 @@
 <template>
   <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">About Me</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col s12 m6">
-      <div class="card blue darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">About Me</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+    <div v-for="(item, index) in cards">
+      <div class="col s12 m4">
+        <div class="card blue">
+          <div class="card-content white-text">
+            <span class="card-title">{{ item.name }}</span>
+            <p>{{ item.description }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -26,7 +18,17 @@ export default {
   name: 'aboutMe',
   data () {
     return {
-      msg: 'Welcome to My Vue.js App'
+      msg: 'Welcome to My Vue.js App',
+      cards: [{
+        name: 'About Me',
+        description: 'Stuff about me in this aspect'
+      }, {
+        name: 'Stuff',
+        description: 'Stuff about me in this aspect'
+      }, {
+        name: 'shit',
+        description: 'Stuff about me in this aspect'
+      }]
     }
   }
 }
