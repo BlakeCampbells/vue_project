@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div class="card blue">
+    <div class="card-content white-text">
+      <span class="card-title">Todo List Example</span>
+    </div>
     <div class="row">
       <div class="col s12 m6" v-for="(item, index) in items">
         <div class="card white">

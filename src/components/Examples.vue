@@ -1,12 +1,12 @@
 <template>
   <div class="row">
-    <div v-for="(item, index) in cards">
-      <div class="col s12 m6">
-        <div class="card blue">
-          <div class="card-content white-text">
-            <span class="card-title">{{ item.title }}</span>
-            <todo></todo>
-          </div>
+    <div class="col s12 m6">
+      <todo></todo>
+    </div>
+    <div class="col s12 m6">
+      <div class="card blue">
+        <div class="card-content white-text">
+          <span class="card-title">{{ chart.title }}</span>
         </div>
       </div>
     </div>
@@ -22,13 +22,14 @@ export default {
   data () {
     return {
       msg: 'Welcome to My Vue.js App',
-      cards: [{
-        title: 'Todo List',
+      todo: {
+        title: 'Todo List Example',
+        component: '<todo></todo>'
+      },
+      chart: {
+        title: 'Chart Example',
         components: ''
-      }, {
-        title: 'Another Card',
-        components: ''
-      }]
+      }
     }
   }
 }
