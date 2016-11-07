@@ -10,7 +10,7 @@
             <div class="left-align">
               <span class="card-title">
                 <input type="checkbox" :id="'checkbox' + index" v-model="item.checked" value="true">
-                <label :for="'checkbox' + index">{{ item.name }}</label>
+                <label :for="'checkbox' + index" class="black-text">{{ item.name }}</label>
                 <a class="btn-floating right blue darken-2" @click="removeTask(index)"><i class="material-icons">delete</i></a>
               </span>
             </div>

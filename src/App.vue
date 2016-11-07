@@ -3,7 +3,7 @@
     <img src="./assets/logo.png">
     <div class="row">
       <div class="col s12 m6 offset-m3">
-        <div class="card teal darken-2">
+        <div class="card blue-grey darken-2">
           <div class="card-content white-text">
             <span class="card-title">What do you want to see?</span>
           </div>
