@@ -25,10 +25,10 @@
       </div>
     </div>
     <span v-show="sections[0].show">
-      <about-me></about-me>
+      <experience></experience>
     </span>
     <span v-show="sections[1].show">
-      <experience></experience>
+      <about-me></about-me>
     </span>
     <span v-show="sections[2].show">
       <examples><examples>
@@ -54,10 +54,10 @@ export default {
       examples: { show: true },
       sections: [
         {
-          name: 'About Blake',
+          name: 'Experience',
           show: true
         }, {
-          name: 'Experience',
+          name: 'About Blake',
           show: true
         }, {
           name: 'Examples',

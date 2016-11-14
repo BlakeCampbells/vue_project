@@ -44,10 +44,10 @@ export default {
     return {
       toolsUsed: [{
         label: 'VueJS',
-        link: 'https://twitter.com/vuejs'
+        link: 'https://vuejs.org/'
       }, {
         label: 'Materialize CSS',
-        link: 'https://forum.vuejs.org'
+        link: 'http://materializecss.com/'
       }],
       contactAt: [{
         label: 'LinkedIn',

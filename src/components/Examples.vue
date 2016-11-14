@@ -4,21 +4,18 @@
       <todo></todo>
     </div>
     <div class="col s12 m6">
-      <div class="card blue">
-        <div class="card-content white-text">
-          <span class="card-title">{{ chart.title }}</span>
-        </div>
-      </div>
+      <chart-ex></chart-ex>
     </div>
   </div>
 </template>
 
 <script>
 import Todo from './examples/Todo'
+import ChartEx from './examples/ChartEx'
 
 export default {
   name: 'examples',
-  components: { Todo },
+  components: { Todo, ChartEx },
   data () {
     return {
       msg: 'Welcome to My Vue.js App',

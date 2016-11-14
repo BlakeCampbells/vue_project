@@ -18,7 +18,6 @@ export default {
   name: 'aboutMe',
   data () {
     return {
-      msg: 'Welcome to My Vue.js App',
       cards: [{
         name: 'About Me',
         description: 'Stuff about me in this aspect'

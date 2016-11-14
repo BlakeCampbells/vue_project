@@ -5,7 +5,7 @@
         <div class="card blue lighten-1">
           <div class="card-content white-text">
             <span class="card-title">{{ item.name }}</span>
-            <p>{{ item.description }}</p>
+            <p>{{ item.preview }}</p>
           </div>
         </div>
       </div>
@@ -15,19 +15,24 @@
 
 <script>
 export default {
-  name: 'aboutMe',
+  name: 'experience',
   data () {
     return {
-      msg: 'Welcome to My Vue.js App',
       cards: [{
-        name: 'About Me',
-        description: 'Stuff about me in this aspect'
+        name: 'MortarStone',
+        preview: 'Working at MortarStone...',
+        expand: false,
+        description: ''
       }, {
-        name: 'Stuff',
-        description: 'Stuff about me in this aspect'
+        name: 'OpenSource',
+        preview: 'Stuff I\'ve made or contributed to...',
+        expand: false,
+        description: ''
       }, {
-        name: 'Other Stuff',
-        description: 'Stuff about me in this aspect'
+        name: 'Other',
+        preview: 'Other Development Stuff',
+        expand: false,
+        description: ''
       }]
     }
   }
