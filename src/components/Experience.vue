@@ -2,10 +2,22 @@
   <div class="row">
     <div v-for="(item, index) in cards">
       <div class="col s12 m4">
-        <div class="card blue lighten-1">
-          <div class="card-content white-text">
-            <span class="card-title">{{ item.name }}</span>
-            <p>{{ item.preview }}</p>
+        <div class="card small blue lighten-1">
+          <div class="card-content">
+            <span class="card-title activator white-text">
+              {{item.name}}
+            </span>
+            <p class="white-text activator">{{item.title}}</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{item.name}}</span>
+            <p>{{item.description}}</p>
+            <div class="card-action activator">
+              <i class="material-icons center card-title">keyboard_arrow_up</i>
+            </div>
+          </div>
+          <div class="card-action activator">
+            <i class="material-icons center">keyboard_arrow_down</i>
           </div>
         </div>
       </div>
@@ -19,18 +31,18 @@ export default {
   data () {
     return {
       cards: [{
-        name: 'MortarStone',
-        preview: 'Working at MortarStone...',
+        name: 'Work',
+        title: 'Developer at MortarStone',
         expand: false,
-        description: ''
+        description: 'Building, maintaining and testing a financial analytics web application. Built with AngularJS and Rails. Applications intended for churches and non-profits.'
       }, {
         name: 'OpenSource',
-        preview: 'Stuff I\'ve made or contributed to...',
+        title: 'Experian Data Dictionary',
         expand: false,
-        description: ''
+        description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 5,000+ downloads. Included tests and examples. '
       }, {
         name: 'Other',
-        preview: 'Other Development Stuff',
+        title: 'Other Development Stuff',
         expand: false,
         description: ''
       }]

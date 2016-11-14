@@ -1,9 +1,9 @@
 <template>
   <div class="row">
-    <div class="col s12 m6">
+    <div class="col s12 m6 l6">
       <todo></todo>
     </div>
-    <div class="col s12 m6">
+    <div class="col s12 m6 l6">
       <chart-ex></chart-ex>
     </div>
   </div>
