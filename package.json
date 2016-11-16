@@ -15,7 +15,6 @@
   "dependencies": {
     "c3": "^0.4.11",
     "font-awesome": "^4.7.0",
-    "materialize-css": "^0.97.8",
     "vue": "^2.0.1",
     "vue-router": "^2.0.1"
   },
