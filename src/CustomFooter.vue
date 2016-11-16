@@ -10,7 +10,7 @@
           <h5 class="white-text">Contact</h5>
           <ul>
             <li v-for="(item, index) in contactAt">
-              <a class="grey-text text-lighten-3" :href="item.link" target="_blank">
+              <a class="grey-text text-lighten-3 row" :href="item.link" target="_blank">
                 <i v-bind:class="item.icon" aria-hidden="true"></i>
                 {{ item.label }}
               </a>
@@ -21,9 +21,11 @@
           <h5 class="white-text">Tools Used</h5>
           <ul>
             <li v-for="(item, index) in toolsUsed">
-              <a class="grey-text text-lighten-3" :href="item.link" target="_blank">
-                {{ item.label }}
-              </a>
+              <div class="row">
+                <a class="grey-text text-lighten-3" :href="item.link" target="_blank">
+                  {{ item.label }}
+                </a>
+              </div>
             </li>
           </ul>
         </div>
