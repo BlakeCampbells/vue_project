@@ -1,6 +1,4 @@
 import Vue from 'vue'
-import 'materialize-css/bin/materialize.css'
-import 'materialize-css/bin/materialize.js'
 import 'font-awesome/css/font-awesome.css'
 
 import App from './App'
