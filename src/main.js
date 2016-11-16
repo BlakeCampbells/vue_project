@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import 'materialize-css/bin/materialize.css'
+import 'materialize-css/bin/materialize.js'
 import App from './App'
 import CustomFooter from './CustomFooter'
 
