@@ -1,9 +1,8 @@
-# vue_project
+# Github Pages Vue Portfolio
 
-> A Vue.js project
+* A Vue.js portfolio project for github pages
 
 ## Build Setup
-
 ``` bash
 # install dependencies
 npm install
