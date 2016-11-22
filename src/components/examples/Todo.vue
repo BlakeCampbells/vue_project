@@ -1,5 +1,5 @@
 <template>
-  <div class="card blue">
+  <div class="card blue hoverable">
     <div class="card-content white-text">
       <span class="card-title">Todo List Example</span>
     </div>

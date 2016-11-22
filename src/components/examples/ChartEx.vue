@@ -1,5 +1,5 @@
 <template>
-  <div class="card blue charting-example">
+  <div class="card blue charting-example hoverable">
     <div class="card-content white-text">
       <span class="card-title" v-on:click="buildChart()">Charting Example</span>
     </div>
@@ -24,9 +24,9 @@
               </thead>
               <tbody>
                 <tr v-for="(section, indx) in sections">
-                  <td><input type="text" v-model="section.label"/></td>
+                  <td><input type="text"   v-model="section.label"/></td>
                   <td><input type="number" v-model="section.votes"/></td>
-                  <td><input type="text" v-model="section.hex"></td>
+                  <td><input type="text"   v-model="section.hex"></td>
                 </tr>
               </tbody>
             </table>

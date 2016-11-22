@@ -9,7 +9,7 @@
           </div>
           <div class="row">
             <div class="col s12 m4" v-for="(item, index) in sections">
-              <div class="card white">
+              <div class="card white hoverable">
                 <div class="card-content white-text">
                   <div class="left-align">
                     <span class="card-title">
