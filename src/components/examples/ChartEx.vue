@@ -67,6 +67,10 @@ export default {
       ]
     }
   },
+  // Used to initialize the chart
+  mounted: function () {
+    this.buildChart()
+  },
   methods: {
     updateChart: function () {
       if (this.votesChart) {
