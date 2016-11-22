@@ -1,11 +1,22 @@
 <template>
   <div class="row">
     <div v-for="(item, index) in cards">
-      <div class="col s12 m4">
-        <div class="card blue lighten-1">
-          <div class="card-content white-text">
-            <span class="card-title">{{ item.name }}</span>
-            <p>{{ item.description }}</p>
+      <div class="col s12 m8 l8 offset-l2 offset-m2">
+        <div class="card blue lighten-3 horizontal">
+          <div class="card-image">
+            <img src="http://lorempixel.com/300/190/nature/6">
+          </div>
+          <div class="card-stacked black-text">
+            <div class="card-title">
+              {{item.name}}
+            </div>
+            <div class="card-content">
+              <ul>
+                <li v-for="attribute in item.attributes">
+                  <span class="left">{{ attribute }}</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -20,13 +31,11 @@ export default {
     return {
       cards: [{
         name: 'About Me',
-        description: 'Stuff about me in this aspect'
-      }, {
-        name: 'Stuff',
-        description: 'Stuff about me in this aspect'
-      }, {
-        name: 'Other Stuff',
-        description: 'Stuff about me in this aspect'
+        attributes: [
+          'Developer, Dog Lover, Hiker',
+          'In my spare time I work on small projects for fun.',
+          'Always trying to learn something new'
+        ]
       }]
     }
   }
@@ -35,21 +44,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>

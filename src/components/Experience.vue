@@ -10,7 +10,7 @@
             <p class="white-text activator">{{item.title}}</p>
           </div>
           <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">{{item.name}}</span>
+            <span class="grey-text text-darken-4">{{item.title}}</span>
             <p>{{item.description}}</p>
             <span v-if="item.notable.length">
               <u>Tools used</u>

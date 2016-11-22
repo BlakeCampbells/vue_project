@@ -50,7 +50,7 @@ export default {
         {
           label: 'Red',
           votes: 12,
-          hex: '#ff6384'
+          hex: '#ff0000'
         }, {
           label: 'Blue',
           votes: 10,
@@ -111,7 +111,6 @@ export default {
           }
         }
       })
-      console.log('My chart', this.votesChart)
     }
   }
 }
