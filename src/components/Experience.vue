@@ -12,6 +12,14 @@
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4">{{item.name}}</span>
             <p>{{item.description}}</p>
+            <span v-if="item.notable.length">
+              <u>Tools used</u>
+            </span>
+            <ul>
+              <li v-for="(tool, indx) in item.notable">
+                {{ tool }}
+              </li>
+            </ul>
             <div class="card-action activator">
               <i class="material-icons center card-title">keyboard_arrow_up</i>
             </div>
@@ -32,19 +40,22 @@ export default {
     return {
       cards: [{
         name: 'Work',
-        title: 'Developer at MortarStone',
+        title: 'Full Stack Developer at MortarStone',
         expand: false,
-        description: 'Building, maintaining and testing a financial analytics web application. Built with AngularJS and Rails. Applications intended for churches and non-profits.'
+        description: 'Building, maintaining and testing a financial analytics web application. Built with AngularJS and Rails. Applications intended for churches and non-profits.',
+        notable: ['Ruby on Rails', 'AngularJS', 'NodeJS', 'Prawn Gem']
       }, {
         name: 'OpenSource',
         title: 'Experian Data Dictionary',
         expand: false,
-        description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 5,000+ downloads. Included tests and examples. '
+        description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 5,000+ downloads. Included tests and examples. ',
+        notable: ['Ruby', 'RSpec']
       }, {
         name: 'Other',
         title: 'Other Development Stuff',
         expand: false,
-        description: ''
+        description: '',
+        notable: []
       }]
     }
   }

@@ -5,9 +5,9 @@ import Examples from 'src/components/Examples'
 
 describe('Examples.vue', () => {
   it('todo to be an object', () => {
-    const vm = new Vue(Examples).$mount()
-    
-    expect(vm.data).toBe('function')
+    const vm = Examples.data()
+    console.log(Examples.data().msg)
+    expect(vm.msg).to.be('Welcome to My Vue.js App')
   })
   // Evaluate the results of functions in
   // the raw component options
