@@ -1,12 +1,11 @@
-import Vue from 'vue'
 import Examples from 'src/components/Examples'
 // import Todo from 'src/components/examples/Todo'
 // import ChartEx from 'src/components/examples/ChartEx'
 
 describe('Examples.vue', () => {
   it('todo to be an object', () => {
-    const vm = Examples.data()
-    console.log(Examples.data().msg)
+    const vm = Examples.data().$mount
+    console.log(Examples.data().$mount().msg)
     expect(vm.msg).to.be('Welcome to My Vue.js App')
   })
   // Evaluate the results of functions in
