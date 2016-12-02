@@ -4,8 +4,8 @@ import Examples from 'src/components/Examples'
 
 describe('Examples.vue', () => {
   it('todo to be an object', () => {
-    const vm = Examples.data().$mount
-    console.log(Examples.data().$mount().msg)
+    const vm = Examples.data()
+    console.log(Examples.data().msg)
     expect(vm.msg).to.be('Welcome to My Vue.js App')
   })
   // Evaluate the results of functions in
