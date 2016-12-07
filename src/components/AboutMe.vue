@@ -4,7 +4,7 @@
       <div class="col s12 m6 l6 offset-l3 offset-m3">
         <div class="card blue lighten-3 ">
           <div class="card-content">
-            <p>{{item.description}}</p>
+            <p>{{ item.description }}</p>
           </div>
         </div>
       </div>
