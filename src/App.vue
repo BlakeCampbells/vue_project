@@ -2,7 +2,7 @@
   <div id="app">
     <div class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper blue lighten-2">
+        <div class="nav-wrapper indigo darken-2">
           <a href="#" class="brand-logo left" id="logo__left">Blake Campbell</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down" v-for="(navItem, indx) in navbar">
             <li><a :href="navItem.link" target="_blank">{{ navItem.name }}</a></li>
@@ -11,7 +11,7 @@
       </nav>
     </div>
     <div class="row">
-      <div class="card blue-grey darken-1 col l8 offset-l2">
+      <div class="card blue-grey lighten-2 col l8 offset-l2">
         <div class="card-content white-text">
           <span class="card-title">What do you want to see?</span>
         </div>
