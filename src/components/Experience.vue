@@ -51,11 +51,11 @@ export default {
         description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 5,000+ downloads. Included tests and examples. ',
         notable: ['Ruby', 'RSpec']
       }, {
-        name: 'Other',
-        title: 'Other Development Stuff',
+        name: 'This Site',
+        title: 'BlakeCampbells.github.io',
         expand: false,
-        description: '',
-        notable: []
+        description: 'Just a simple frontend with some development examples.',
+        notable: ['VueJS']
       }]
     }
   }

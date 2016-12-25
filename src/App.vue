@@ -2,7 +2,7 @@
   <div id="app">
     <div class="navbar-fixed">
       <nav>
-        <div class="nav-wrapper indigo darken-2">
+        <div class="nav-wrapper blue darken-4">
           <a href="#" class="brand-logo left" id="logo__left">Blake Campbell</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down" v-for="(navItem, indx) in navbar">
             <li><a :href="navItem.link" target="_blank">{{ navItem.name }}</a></li>
@@ -35,25 +35,25 @@
       <experience></experience>
     </span>
     <span v-show="sections[1].show">
-      <about-me></about-me>
+      <examples></examples>
     </span>
     <span v-show="sections[2].show">
-      <examples><examples>
+      <github-api></github-api>
     </span>
   </div>
 </template>
 
 <script>
 import Examples from './components/Examples'
-import AboutMe from './components/AboutMe'
 import Experience from './components/Experience'
+import GithubApi from './components/GithubApi'
 
 export default {
   name: 'app',
   components: {
     Examples,
-    AboutMe,
-    Experience
+    Experience,
+    GithubApi
   },
   data () {
     return {
@@ -64,10 +64,10 @@ export default {
           name: 'Experience',
           show: true
         }, {
-          name: 'About Blake',
-          show: false
-        }, {
           name: 'Examples',
+          show: true
+        }, {
+          name: 'GitHub API',
           show: true
         }
       ],
