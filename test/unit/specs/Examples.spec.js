@@ -6,7 +6,7 @@ describe('Examples.vue', () => {
   it('todo to be an object', () => {
     const vm = Examples.data()
     console.log(Examples.data().msg)
-    expect(vm.msg).to.be('Welcome to My Vue.js App')
+    vm.msg.should.equal('Welcome to My Vue.js App')
   })
   // Evaluate the results of functions in
   // the raw component options
