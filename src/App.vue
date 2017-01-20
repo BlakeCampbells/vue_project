@@ -75,6 +75,9 @@ export default {
         {
           name: 'Code',
           link: 'https://github.com/BlakeCampbells/vue_project'
+        }, {
+          name: 'Resume',
+          link: '/static/Blake_Campbell_resume.pdf'
         }
       ]
     }
