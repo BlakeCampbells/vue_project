@@ -1,16 +1,17 @@
 <template>
   <div class="row">
     <div v-for="(item, index) in cards">
-      <div class="col s12 m4">
+      <div class="col s12 m3">
         <div class="card small blue darken-1 hoverable">
           <div class="card-content">
             <span class="card-title activator white-text">
               {{item.name}}
             </span>
-            <p class="white-text activator">{{item.title}}</p>
+            <div class="white-text activator" v-html="item.title"></div>
           </div>
           <div class="card-reveal">
-            <span class="grey-text text-darken-4">{{item.title}}</span>
+            <!-- <span class="grey-text text-darken-4">{{item.title}}</span> -->
+            <a v-bind:href="item.url" target="_blank">{{item.title}}</a>
             <p>{{item.description}}</p>
             <span v-if="item.notable.length">
               <u>Tools used</u>
@@ -41,21 +42,31 @@ export default {
       cards: [{
         name: 'Work',
         title: 'Full Stack Developer at MortarStone',
+        url: 'https://www.mortarstone.com',
         expand: false,
         description: 'Building, maintaining and testing a financial analytics web application. Built with AngularJS and Rails. Applications intended for churches and non-profits.',
         notable: ['Ruby on Rails', 'AngularJS', 'NodeJS', 'Prawn Gem']
       }, {
         name: 'OpenSource',
         title: 'Experian Data Dictionary',
+        url: 'https://rubygems.org/gems/experian-data-dictionary/versions/1.4',
         expand: false,
         description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 5,000+ downloads. Included tests and examples. ',
-        notable: ['Ruby', 'RSpec']
+        notable: ['Ruby', 'RSpec', 'Rubocop']
       }, {
-        name: 'This Site',
-        title: 'BlakeCampbells.github.io',
+        name: 'Small utility site',
+        title: '126 Hours',
+        url: 'http://www.126hours.com/',
         expand: false,
-        description: 'Just a simple frontend with some development examples.',
-        notable: ['VueJS']
+        description: 'A little hobby project tracking hours left in a week after sleeping. Includes testing and examples.',
+        notable: ['JavaScript', 'SASS', 'VueJS']
+      }, {
+        name: 'Portfolio Site',
+        title: 'BlakeCampbell.com',
+        url: 'http://www.blakecampbell.com/',
+        expand: false,
+        description: 'VueJS front-end site as a working demo. Includes testing with mocha.',
+        notable: ['JavaScript', 'SASS', 'VueJS']
       }]
     }
   }

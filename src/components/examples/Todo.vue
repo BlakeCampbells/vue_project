@@ -39,19 +39,19 @@ export default {
   data () {
     return {
       items: [{
-        name: 'this',
+        name: 'Update Documentation',
         checked: false
       }, {
-        name: 'that',
+        name: 'Get test coverage to 100%',
         checked: false
       }, {
-        name: 'another',
+        name: 'Improve speed',
         checked: false
       }, {
-        name: 'stuff',
+        name: 'Add existing work',
         checked: false
       }],
-      newTask: { name: 'Here', checked: false }
+      newTask: { name: 'New suggestion example', checked: false }
     }
   },
   methods: {
