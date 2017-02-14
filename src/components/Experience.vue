@@ -54,7 +54,7 @@ export default {
         description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 5,000+ downloads. Included tests and examples. ',
         notable: ['Ruby', 'RSpec', 'Rubocop']
       }, {
-        name: 'Small utility site',
+        name: 'Small Utility Site',
         title: '126 Hours',
         url: 'http://www.126hours.com/',
         expand: false,
