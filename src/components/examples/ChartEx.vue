@@ -43,7 +43,7 @@
 <script>
 import Chart from 'chart.js'
 export default {
-  name: 'chartEx',
+  name: 'ChartEx',
   data () {
     return {
       sections: [

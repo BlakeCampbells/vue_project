@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'githubApi',
+  name: 'GithubApi',
   data () {
     return {
       profile: {}

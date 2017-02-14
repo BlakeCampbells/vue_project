@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: 'todo',
+  name: 'Todo',
   data () {
     return {
       items: [{
