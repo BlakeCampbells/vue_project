@@ -8,15 +8,13 @@
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
-    "e2e": "node test/e2e/runner.js",
-    "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "test": "npm run unit",
+    "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
-    "c3": "^0.4.11",
     "chart.js": "^2.4.0",
     "font-awesome": "^4.7.0",
-    "vue": "^2.0.1",
+    "vue": "2.0.5",
     "vue-router": "^2.0.1"
   },
   "devDependencies": {

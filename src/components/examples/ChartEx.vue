@@ -13,6 +13,9 @@
             </div>
           </div>
           <div class="card-reveal activator">
+            <div class="activator">
+              <i class="material-icons center card-title" v-on:click="updateChart()">keyboard_arrow_up</i>
+            </div>
             Chart Values
             <table>
               <thead>
@@ -30,9 +33,6 @@
                 </tr>
               </tbody>
             </table>
-            <div class="card-action activator">
-              <i class="material-icons center card-title" v-on:click="updateChart()">keyboard_arrow_up</i>
-            </div>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
 <script>
 import Chart from 'chart.js'
 export default {
-  name: 'chartEx',
+  name: 'ChartEx',
   data () {
     return {
       sections: [
@@ -118,5 +118,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+#sticky__footer{
+  position: relative;;
+}
 </style>

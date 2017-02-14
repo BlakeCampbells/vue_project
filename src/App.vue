@@ -49,7 +49,7 @@ import Experience from './components/Experience'
 import GithubApi from './components/GithubApi'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Examples,
     Experience,
