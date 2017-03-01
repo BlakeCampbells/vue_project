@@ -1,46 +1,49 @@
 <template>
-  <div id="app">
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper blue darken-4">
-          <a href="#" class="brand-logo left" id="logo__left">Blake Campbell</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down" v-for="(navItem, indx) in navbar">
-            <li><a :href="navItem.link" target="_blank">{{ navItem.name }}</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="row">
-      <div class="card blue-grey lighten-2 col l8 offset-l2">
-        <div class="card-content white-text">
-          <span class="card-title">What do you want to see?</span>
-        </div>
-        <div class="row">
-          <div class="col s12 m4" v-for="(item, index) in sections">
-            <div class="card white hoverable">
-              <div class="card-content white-text">
-                <div class="left-align">
-                  <span class="card-title">
-                    <input type="checkbox" :id="'checkbox' + index" v-model="item.show" value="true">
-                    <label :for="'checkbox' + index">{{ item.name }}</label>
-                  </span>
+  <span>
+    <div id="app">
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper blue darken-4">
+            <a href="#" class="brand-logo left" id="logo__left">Blake Campbell</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down" v-for="(navItem, indx) in navbar">
+              <li><a :href="navItem.link" target="_blank">{{ navItem.name }}</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="row">
+        <div class="card blue-grey lighten-2 col l8 offset-l2 card_opacity">
+          <div class="card-content white-text">
+            <span class="card-title">What do you want to see?</span>
+          </div>
+          <div class="row">
+            <div class="col s12 m4" v-for="(item, index) in sections">
+              <div class="card white hoverable">
+                <div class="card-content white-text">
+                  <div class="left-align">
+                    <span class="card-title">
+                      <input type="checkbox" :id="'checkbox' + index" v-model="item.show" value="true">
+                      <label :for="'checkbox' + index">{{ item.name }}</label>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <span v-show="sections[0].show">
+        <experience></experience>
+      </span>
+      <span v-show="sections[1].show">
+        <examples></examples>
+      </span>
+      <span v-show="sections[2].show">
+        <github-api></github-api>
+      </span>
     </div>
-    <span v-show="sections[0].show">
-      <experience></experience>
-    </span>
-    <span v-show="sections[1].show">
-      <examples></examples>
-    </span>
-    <span v-show="sections[2].show">
-      <github-api></github-api>
-    </span>
-  </div>
+    <div id="customFooter"></div>
+  </span>
 </template>
 
 <script>
@@ -62,13 +65,13 @@ export default {
       sections: [
         {
           name: 'Experience',
-          show: true
+          show: false
         }, {
           name: 'Examples',
-          show: true
+          show: false
         }, {
           name: 'GitHub API',
-          show: true
+          show: false
         }
       ],
       navbar: [
@@ -92,11 +95,17 @@ export default {
 
 <style>
 #app {
+  height: 2000px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: url('/static/overhead_park.JPG') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #logo__left {
@@ -105,5 +114,12 @@ export default {
   font-size: 2.1rem;
   padding-left: 20px;
   white-space: nowrap;
+}
+
+.card_opacity {
+  opacity: 0.5;
+}
+.card_opacity:hover {
+  opacity: 0.9;
 }
 </style>
