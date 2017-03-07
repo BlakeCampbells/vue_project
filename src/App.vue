@@ -29,18 +29,18 @@
             <span class="card-title">Developer</span>
           </div>
           <div class="row">
-            <div class="col s12 m4" v-for="(item, index) in sections">
+            <div class="col s12 m4" v-for="(section, index) in sections">
               <div class="card white hoverable">
                 <div class="card-content white-text">
                   <div class="left-align">
                     <span class="card-title">
                       <input
                         type="checkbox"
-                        :id="'checkbox' + index"
-                        v-model="item.show"
+                        :id="'sections_checkbox' + index"
+                        v-model="section.show"
                         value="true"
                       >
-                      <label :for="'checkbox' + index">{{ item.name }}</label>
+                      <label :for="'sections_checkbox' + index">{{ section.name }}</label>
                     </span>
                   </div>
                 </div>
@@ -64,9 +64,9 @@
       <span v-show="sections[4].show">
         <contact></contact>
       </span>
-      <span v-for="(item, index) in pictures">
+      <span v-for="(picture, index) in pictures">
         <img
-          :src="'/static/background_images/' + item"
+          :src="'/static/background_images/' + picture"
           style="display: none"
         >
       </span>
