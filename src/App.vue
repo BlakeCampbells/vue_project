@@ -64,6 +64,12 @@
       <span v-show="sections[4].show">
         <contact></contact>
       </span>
+      <span v-for="(item, index) in pictures">
+        <img
+          :src="'/static/background_images/' + item"
+          style="display: none"
+        >
+      </span>
     </div>
   </span>
 </template>
