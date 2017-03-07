@@ -49,6 +49,9 @@
       <span v-show="sections[0].show">
         <about-me></about-me>
       </span>
+      <span v-show="sections[4].show">
+        <contact></contact>
+      </span>
       <span v-show="sections[1].show">
         <experience></experience>
       </span>
@@ -64,6 +67,7 @@
 
 <script>
 import AboutMe from './components/AboutMe'
+import Contact from './components/Contact'
 import Examples from './components/Examples'
 import Experience from './components/Experience'
 import GithubApi from './components/GithubApi'
@@ -72,6 +76,7 @@ export default {
   name: 'App',
   components: {
     AboutMe,
+    Contact,
     Examples,
     Experience,
     GithubApi
@@ -90,6 +95,9 @@ export default {
           show: false
         }, {
           name: 'Experience',
+          show: false
+        }, {
+          name: 'Contact',
           show: false
         }, {
           name: 'Examples',
@@ -115,6 +123,10 @@ export default {
       this.sections.forEach(function (section) {
         section.show = false
       })
+      var self = this
+      setInterval(function () {
+        self.pictureNext()
+      }, 8000)
     },
     pictureNext: function () {
       if (this.currentPicture === this.pictures.length - 1) {
@@ -138,7 +150,7 @@ export default {
 
 <style>
 body {
-  min-height: 1000px;
+  min-height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

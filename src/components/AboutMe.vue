@@ -12,7 +12,7 @@
                 <span>{{ profile.name }}</span>
               </h4>
               <hr>
-              <p>{{ profile.bio }}</p>
+              <p>{{ bio }}</p>
             </div>
           </span>
         </div>
@@ -26,7 +26,8 @@ export default {
   name: 'AboutMe',
   data () {
     return {
-      profile: {}
+      profile: {},
+      bio: 'Developer with a passion for programming. Always playing with new ideas.'
     }
   },
   methods: {},
