@@ -10,12 +10,14 @@
           </label>
         </div>
       </div>
-      <div class="row" v-show="slideshowMode == true">
-        <div class="col l2 m2 s2 white-text">
-          <i class="fa fa-arrow-left fa-3x" aria-hidden="true" v-on:click="picturePrevious()"></i>
-        </div>
-        <div class="col l2 m2 s2 offset-l8 offset-m8 offset-s8 white-text">
-          <i class="fa fa-arrow-right fa-3x" aria-hidden="true" v-on:click="pictureNext()"></i>
+      <div class="row">
+        <div class="valign" v-show="slideshowMode == true">
+          <div class="col l2 m2 s2">
+            <i class="fa fa-arrow-circle-left fa-4x" aria-hidden="true" v-on:click="picturePrevious()"></i>
+          </div>
+          <div class="col l2 m2 s2 offset-l8 offset-m8 offset-s8">
+            <i class="fa fa-arrow-circle-right fa-4x" aria-hidden="true" v-on:click="pictureNext()"></i>
+          </div>
         </div>
       </div>
       <div class="row" v-show="slideshowMode != true">
@@ -76,7 +78,7 @@ export default {
   },
   data () {
     return {
-      slideshowMode: true,
+      slideshowMode: false,
       pictures: [
         '001.JPG', '002.JPG', '003.JPG', '004.JPG', '005.JPG', '006.JPG',
         '007.JPG', '008.JPG', '009.JPG', '010.JPG', '011.JPG'
@@ -147,6 +149,18 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.fa-arrow-circle-left {
+  background: white;
+  border-radius: 50%;
+  height: 1em;
+  width: 1em;
+}
+.fa-arrow-circle-right {
+  background: white;
+  border-radius: 50%;
+  height: 1em;
+  width: 1em;
 }
 
 #logo__left {
