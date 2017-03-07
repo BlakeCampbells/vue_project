@@ -5,7 +5,7 @@
         <div class="switch col l2 m2 s2 offset-l10 offset-m10 offset-s10 white-text">
           Slideshow Mode
           <label>
-            <input type="checkbox" v-on:click="slideshow()" v-model="slideshowMode" value="true">
+            <input type="checkbox" v-on:click="slideshow()" value="true">
             <span class="lever"></span>
           </label>
         </div>
@@ -71,6 +71,7 @@ import Contact from './components/Contact'
 import Examples from './components/Examples'
 import Experience from './components/Experience'
 import GithubApi from './components/GithubApi'
+var existingInterval
 
 export default {
   name: 'App',
@@ -120,13 +121,19 @@ export default {
   },
   methods: {
     slideshow: function () {
+      this.slideshowMode = !this.slideshowMode
       this.sections.forEach(function (section) {
         section.show = false
       })
       var self = this
-      setInterval(function () {
-        self.pictureNext()
-      }, 8000)
+      if (this.slideshowMode === true) {
+        existingInterval = setInterval(function () {
+          self.pictureNext()
+        }, 8000)
+      } else {
+        window.clearInterval(existingInterval)
+        existingInterval = undefined
+      }
     },
     pictureNext: function () {
       if (this.currentPicture === this.pictures.length - 1) {

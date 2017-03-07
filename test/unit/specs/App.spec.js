@@ -39,16 +39,5 @@ describe('App.vue', () => {
       var methods = App.methods
       expect(methods).to.be.an('object')
     })
-
-    it('switchShow to be a function', () => {
-      var component = {
-        name: 'Experience',
-        show: true
-      }
-      expect(component).to.be.an('object')
-      component.show.should.equal(true)
-      App.methods.switchShow(component)
-      component.show.should.equal(false)
-    })
   })
 })
