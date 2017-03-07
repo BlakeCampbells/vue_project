@@ -2,17 +2,19 @@
   <div class="row">
     <div class="col l6 s12 offset-l3">
       <div class="card blue">
-        <div class="card-title">
-          <h5 class="white-text">Contact</h5>
+        <div class="card-content">
+          <div class="card-title">
+            <h5 class="white-text">Contact</h5>
+          </div>
+          <ul class="left-align padding">
+            <li v-for="(item, index) in contactAt">
+              <a class="grey-text text-lighten-3" :href="item.link" target="_blank">
+                <i v-bind:class="item.icon" aria-hidden="true"></i>
+                {{ item.link }}
+              </a>
+            </li>
+          </ul>
         </div>
-        <ul class="left-align padding">
-          <li v-for="(item, index) in contactAt">
-            <a class="grey-text text-lighten-3" :href="item.link" target="_blank">
-              <i v-bind:class="item.icon" aria-hidden="true"></i>
-              {{ item.link }}
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
@@ -25,15 +27,15 @@ export default {
     return {
       contactAt: [{
         label: 'LinkedIn',
-        icon: 'fa fa-linkedin-square',
+        icon: 'fa fa-linkedin-square fa-3x',
         link: 'https://www.linkedin.com/in/blake-campbell'
       }, {
         label: 'GitHub',
-        icon: 'fa fa-github',
+        icon: 'fa fa-github fa-3x',
         link: 'https://github.com/BlakeCampbells'
       }, {
         label: 'Email',
-        icon: 'fa fa-envelope',
+        icon: 'fa fa-envelope fa-3x',
         link: 'mailto:blakecampbell.dev@gmail.com'
       }]
     }

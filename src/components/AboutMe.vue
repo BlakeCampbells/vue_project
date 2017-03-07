@@ -12,7 +12,7 @@
                 <span>{{ profile.name }}</span>
               </h4>
               <hr>
-              <p>{{ bio }}</p>
+              <p v-html="bio"></p>
             </div>
           </span>
         </div>
@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       profile: {},
-      bio: 'Developer with a passion for programming. Always playing with new ideas.'
+      bio: 'Developer with a passion for programming. Always playing with new ideas. <br> In my freetime I\'m either reading, hiking, taking pictures or working on a new project.'
     }
   },
   methods: {},

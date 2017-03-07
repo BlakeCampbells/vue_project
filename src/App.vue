@@ -21,9 +21,12 @@
         </div>
       </div>
       <div class="row" v-show="slideshowMode != true">
-        <div class="card blue-grey lighten-2 col l8 offset-l2 card_opacity">
+        <div class="card blue-grey col l8 offset-l2 card_opacity">
           <div class="card-content white-text">
             <span class="card-title">Blake Campbell</span>
+            <br>
+            <hr>
+            <span class="card-title">Developer</span>
           </div>
           <div class="row">
             <div class="col s12 m4" v-for="(item, index) in sections">
@@ -49,9 +52,6 @@
       <span v-show="sections[0].show">
         <about-me></about-me>
       </span>
-      <span v-show="sections[4].show">
-        <contact></contact>
-      </span>
       <span v-show="sections[1].show">
         <experience></experience>
       </span>
@@ -60,6 +60,9 @@
       </span>
       <span v-show="sections[3].show">
         <github-api></github-api>
+      </span>
+      <span v-show="sections[4].show">
+        <contact></contact>
       </span>
     </div>
   </span>
@@ -98,13 +101,13 @@ export default {
           name: 'Experience',
           show: false
         }, {
-          name: 'Contact',
-          show: false
-        }, {
-          name: 'Examples',
+          name: 'Simple Examples',
           show: false
         }, {
           name: 'GitHub API',
+          show: false
+        }, {
+          name: 'Contact',
           show: false
         }
       ],
