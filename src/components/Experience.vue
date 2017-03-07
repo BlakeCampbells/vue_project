@@ -10,7 +10,6 @@
             <div class="white-text activator" v-html="item.title"></div>
           </div>
           <div class="card-reveal">
-            <!-- <span class="grey-text text-darken-4">{{item.title}}</span> -->
             <a v-bind:href="item.url" target="_blank">{{item.title}}</a>
             <p>{{item.description}}</p>
             <span v-if="item.notable.length">
