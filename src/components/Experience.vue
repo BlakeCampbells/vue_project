@@ -2,7 +2,7 @@
   <div class="row">
     <div v-for="(item, index) in cards">
       <div class="col s12 m3">
-        <div class="card small blue darken-1 hoverable">
+        <div class="card small hoverable" v-bind:class="'blue darken-'+(index)">
           <div class="card-content">
             <span class="card-title activator white-text">
               {{item.name}}
