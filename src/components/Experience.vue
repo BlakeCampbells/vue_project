@@ -1,8 +1,8 @@
 <template>
   <div class="row">
     <div v-for="(item, index) in cards">
-      <div class="col s12 m3">
-        <div class="card small hoverable" v-bind:class="'blue darken-'+(index)">
+      <div class="col s12 m4">
+        <div class="card small hoverable" v-bind:class="'blue darken-'+((index%3)+2)">
           <div class="card-content">
             <span class="card-title activator white-text">
               {{item.name}}
@@ -10,10 +10,10 @@
             <div class="white-text activator" v-html="item.title"></div>
           </div>
           <div class="card-reveal">
-            <a v-bind:href="item.url" target="_blank">{{item.title}}</a>
+            <a v-bind:href="item.url" target="_blank"><u>{{item.title}}</u></a>
             <p>{{item.description}}</p>
             <span v-if="item.notable.length">
-              <u>Tools used</u>
+              <b>Tools used</b>
             </span>
             <ul>
               <li v-for="(tool, indx) in item.notable">
@@ -44,14 +44,21 @@ export default {
         url: 'https://www.mortarstone.com',
         expand: false,
         description: 'Building, maintaining and testing a financial analytics web application. Built with AngularJS and Rails. Applications intended for churches and non-profits.',
-        notable: ['Ruby on Rails', 'AngularJS', 'NodeJS', 'Prawn Gem']
+        notable: ['Ruby on Rails', 'AngularJS', 'NodeJS']
       }, {
-        name: 'OpenSource',
+        name: 'OpenSource Ruby Gem',
         title: 'Experian Data Dictionary',
         url: 'https://rubygems.org/gems/experian-data-dictionary/versions/1.4',
         expand: false,
         description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 5,000+ downloads. Included tests and examples. ',
         notable: ['Ruby', 'RSpec', 'Rubocop']
+      }, {
+        name: 'Microsoft 2017 Hackathon',
+        title: 'TurboScript 5',
+        url: 'https://rubygems.org/gems/experian-data-dictionary/versions/1.4',
+        expand: false,
+        description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 5,000+ downloads. Included tests and examples. ',
+        notable: ['NodeJS', 'Electron', 'VueJS']
       }, {
         name: 'Small Utility Site',
         title: '126 Hours',
@@ -66,6 +73,13 @@ export default {
         expand: false,
         description: 'VueJS front-end site as a working demo. Includes testing with mocha.',
         notable: ['JavaScript', 'SASS', 'VueJS']
+      }, {
+        name: 'Reno Developer Meetup Talk',
+        title: 'PDFs exports as Microservices',
+        url: 'https://www.meetup.com/dev-reno/events/227339572',
+        expand: false,
+        description: 'First talk I gave to the local Reno Dev Group. Went through how to build and manange a microservice for handling exports specifically PDFs. ',
+        notable: ['Ruby on Rails', 'Prawn', 'Microservices']
       }]
     }
   }
