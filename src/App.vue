@@ -23,13 +23,28 @@
       <div class="row" v-show="slideshowMode != true">
         <div class="card blue-grey col l8 offset-l2 card_opacity">
           <div class="card-content white-text">
+            <div class="row">
+              <img width="50" height="" class="avatar__image" :src="profile.avatar_url" alt=""/>
+            </div>
             <span class="card-title">Blake Campbell</span>
             <br>
+            <a
+              class="btn waves-effect waves-light blue"
+              type="submit"
+              name="action"
+              target="_blank"
+              :href="navbar[1].link"
+            >Resume
+              <i class="material-icons right">file_download</i>
+            </a>
+            <br>
             <hr>
-            <span class="card-title">Developer</span>
+            <span class="card-content">
+              Developer with a passion for programming. Always playing with new ideas.
+            </span>
           </div>
           <div class="row">
-            <div class="col s12 m4" v-for="(section, index) in sections">
+            <div class="col s12 m6" v-for="(section, index) in sections">
               <div class="card white hoverable">
                 <div class="card-content white-text">
                   <div class="left-align">
@@ -50,18 +65,9 @@
         </div>
       </div>
       <span v-show="sections[0].show">
-        <about-me></about-me>
-      </span>
-      <span v-show="sections[1].show">
         <experience></experience>
       </span>
-      <span v-show="sections[2].show">
-        <examples></examples>
-      </span>
-      <span v-show="sections[3].show">
-        <github-api></github-api>
-      </span>
-      <span v-show="sections[4].show">
+      <span v-show="sections[1].show">
         <contact></contact>
       </span>
       <span v-for="(picture, index) in pictures">
@@ -75,24 +81,19 @@
 </template>
 
 <script>
-import AboutMe from './components/AboutMe'
 import Contact from './components/Contact'
-import Examples from './components/Examples'
 import Experience from './components/Experience'
-import GithubApi from './components/GithubApi'
 var existingInterval
 
 export default {
   name: 'App',
   components: {
-    AboutMe,
     Contact,
-    Examples,
-    Experience,
-    GithubApi
+    Experience
   },
   data () {
     return {
+      profile: '',
       slideshowMode: false,
       pictures: [
         '001.JPG', '002.JPG', '003.JPG', '004.JPG', '005.JPG', '006.JPG',
@@ -101,16 +102,7 @@ export default {
       currentPicture: 0,
       sections: [
         {
-          name: 'About me',
-          show: false
-        }, {
           name: 'Experience',
-          show: false
-        }, {
-          name: 'Simple Examples',
-          show: false
-        }, {
-          name: 'GitHub API',
           show: false
         }, {
           name: 'Contact',
@@ -127,6 +119,11 @@ export default {
         }
       ]
     }
+  },
+  created: function () {
+    this.$http.get('https://api.github.com/users/BlakeCampbells').then(function (response) {
+      this.profile = response.data
+    })
   },
   methods: {
     slideshow: function () {
@@ -204,5 +201,12 @@ body {
 }
 .card_opacity:hover {
   opacity: 0.9;
+}
+.avatar__image {
+  border-radius: 50%;
+  max-width: 15%;
+  max-height: 15%;
+  width: auto;
+  height: auto;
 }
 </style>
