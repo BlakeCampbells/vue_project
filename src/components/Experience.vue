@@ -55,9 +55,9 @@ export default {
       }, {
         name: 'Microsoft 2017 Hackathon',
         title: 'TurboScript 5',
-        url: 'https://rubygems.org/gems/experian-data-dictionary/versions/1.4',
+        url: '',
         expand: false,
-        description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 5,000+ downloads. Included tests and examples. ',
+        description: 'Created a small Electron App that take text and converts it to an audio file. Uses Bing Cognitive Services. ',
         notable: ['NodeJS', 'Electron', 'VueJS']
       }, {
         name: 'Small Utility Site',
