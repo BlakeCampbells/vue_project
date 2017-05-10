@@ -97,7 +97,7 @@ export default {
       slideshowMode: false,
       pictures: [
         '001.JPG', '002.JPG', '003.JPG', '004.JPG', '005.JPG', '006.JPG',
-        '007.JPG', '008.JPG', '009.JPG', '010.JPG', '011.JPG'
+        '007.JPG', '009.JPG', '010.JPG', '011.JPG'
       ],
       currentPicture: 0,
       sections: [
