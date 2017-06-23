@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  name: 'CustomFooter',
+  name: 'Contact',
   data () {
     return {
       emailMessage: '',

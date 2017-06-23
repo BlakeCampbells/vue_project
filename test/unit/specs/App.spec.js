@@ -39,5 +39,13 @@ describe('App.vue', () => {
       var methods = App.methods
       expect(methods).to.be.an('object')
     })
+
+    it('To exist', () => {
+      var data = App.data()
+      console.log(data)
+      var slideshow = App.methods.slideshow
+      expect(slideshow).to.be.a('function')
+      slideshow()
+    })
   })
 })
