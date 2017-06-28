@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col l6 s12 offset-l3">
+    <div class="col s12">
       <div class="card blue-grey darken-2 card_opacity">
         <div class="card-content">
           <div class="card-title">

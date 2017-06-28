@@ -9,8 +9,25 @@
     <!-- Compiled and minified JavaScript -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
-  <body class="grey darken-4">
-    <div id="app"></div>
+  <body>
+    <div id="app">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo center">BLAKE CAMPBELL</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><router-link to="/">Experience</router-link></li>
+            <li><router-link to="/resume">Resume</router-link></li>
+          </ul>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><router-link to="/about">About</router-link></li>
+            <li><router-link to="/contact">Contact</router-link></li>
+          </ul>
+        </div>
+      </nav>
+      <div>
+        <router-view></router-view>
+      </div>
+    </div>
     <!-- <div id="customFooter"></div> -->
     <!-- built files will be auto injected -->
     <script>
@@ -18,7 +35,7 @@
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      
+
       ga('create', 'UA-101248615-2', 'auto');
       ga('send', 'pageview');
     </script>
@@ -26,3 +43,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
   </body>
 </html>
+
+<!-- <ul id="nav-mobile" class="left hide-on-med-and-down">
+  <li><router-link to="/">Experience</router-link></li>
+  <li><router-link to="">Resume</router-link></li>
+</ul>
+<ul id="nav-mobile" class="right hide-on-med-and-down">
+  <li><router-link to="">About</router-link></li>
+  <li><router-link to="">Contact</router-link></li>
+</ul> -->

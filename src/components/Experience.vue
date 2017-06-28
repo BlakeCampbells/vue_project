@@ -1,13 +1,13 @@
 <template>
   <div class="row">
     <div v-for="(item, index) in cards">
-      <div class="col s12 m4">
-        <div class="card small hoverable" v-bind:class="'blue darken-'+((index%3)+2)">
+      <div class="col s12 m6 l6">
+        <div class="card small hoverable">
           <div class="card-content">
-            <span class="card-title activator white-text">
+            <span class="card-title activator">
               {{item.name}}
             </span>
-            <div class="white-text activator" v-html="item.title"></div>
+            <div class=" activator" v-html="item.title"></div>
           </div>
           <div class="card-reveal">
             <a v-bind:href="item.url" target="_blank"><u>{{item.title}}</u></a>
