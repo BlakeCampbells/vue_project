@@ -5,6 +5,7 @@ import 'font-awesome/css/font-awesome.css'
 import App from './App'
 
 const router = new VueRouter({
+  mode: 'history',
   routes: [
     { path: '*', component: App }
   ]
