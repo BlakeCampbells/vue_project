@@ -50,14 +50,14 @@ export default {
         title: 'Experian Data Dictionary',
         url: 'https://rubygems.org/gems/experian-data-dictionary/versions/1.4',
         expand: false,
-        description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 5,000+ downloads. Included tests and examples. ',
+        description: 'Created an Experian Data Dictionary for public use. Translating between columns and values to definitions. Currently at 6,000+ downloads. Included tests and examples. ',
         notable: ['Ruby', 'RSpec', 'Rubocop']
       }, {
         name: 'Microsoft 2017 Hackathon',
         title: 'TurboScript 5',
-        url: '',
+        url: 'https://github.com/BlakeCampbells/TurboScript5',
         expand: false,
-        description: 'Created a small Electron App that take text and converts it to an audio file. Uses Bing Cognitive Services. ',
+        description: 'Created a small Electron App that take text and converts it to an audio file. Using Bing Cognitive Services. ',
         notable: ['NodeJS', 'Electron', 'VueJS']
       }, {
         name: 'Small Utility Site',
@@ -72,7 +72,7 @@ export default {
         url: 'http://www.blakecampbell.com/',
         expand: false,
         description: 'VueJS front-end site as a working demo. Includes testing with mocha.',
-        notable: ['JavaScript', 'SASS', 'VueJS']
+        notable: ['JavaScript', 'SASS', 'VueJS', 'Mocha']
       }, {
         name: 'Reno Developer Meetup Talk',
         title: 'PDFs exports as Microservices',
