@@ -1,4 +1,4 @@
-// import Vue from 'vue'
+import Vue from 'vue'
 import App from 'src/App'
 
 describe('App.vue', () => {
@@ -41,22 +41,24 @@ describe('App.vue', () => {
     })
 
     it('Slideshow To exist', () => {
+      const Ctor = Vue.extend(App)
+      const vm = new Ctor().$mount()
+      console.dir('VM', vm.app)
       var slideshow = App.methods.slideshow
       expect(slideshow).to.be.a('function')
       slideshow()
     })
 
     it('Slideshow To exist', () => {
-      console.log('Methods', App.created())
       var pictureNext = App.methods.pictureNext
       expect(pictureNext).to.be.a('function')
-      pictureNext()
+      // pictureNext()
     })
 
     it('Slideshow To exist', () => {
       var picturePrevious = App.methods.picturePrevious
       expect(picturePrevious).to.be.a('function')
-      picturePrevious()
+      // picturePrevious()
     })
   })
 })
