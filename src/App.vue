@@ -121,18 +121,19 @@ export default {
     }
   },
   created: function () {
+    console.log('Logging this', this)
     this.$http.get('https://api.github.com/users/BlakeCampbells').then(function (response) {
       this.profile = response.data
     })
   },
   methods: {
     slideshow: function () {
-      this.slideshowMode = !this.slideshowMode
-      this.sections.forEach(function (section) {
+      var self = this
+      self.slideshowMode = !self.slideshowMode
+      self.sections.forEach(function (section) {
         section.show = false
       })
-      var self = this
-      if (this.slideshowMode === true) {
+      if (self.slideshowMode === true) {
         existingInterval = setInterval(function () {
           self.pictureNext()
         }, 8000)

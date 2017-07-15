@@ -40,12 +40,23 @@ describe('App.vue', () => {
       expect(methods).to.be.an('object')
     })
 
-    it('To exist', () => {
-      var data = App.data()
-      console.log(data)
+    it('Slideshow To exist', () => {
       var slideshow = App.methods.slideshow
       expect(slideshow).to.be.a('function')
       slideshow()
+    })
+
+    it('Slideshow To exist', () => {
+      console.log('Methods', App.created())
+      var pictureNext = App.methods.pictureNext
+      expect(pictureNext).to.be.a('function')
+      pictureNext()
+    })
+
+    it('Slideshow To exist', () => {
+      var picturePrevious = App.methods.picturePrevious
+      expect(picturePrevious).to.be.a('function')
+      picturePrevious()
     })
   })
 })
