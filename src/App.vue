@@ -83,7 +83,6 @@
 <script>
 import Contact from './components/Contact'
 import Experience from './components/Experience'
-var existingInterval
 
 export default {
   name: 'App',
@@ -128,19 +127,10 @@ export default {
   },
   methods: {
     slideshow: function () {
-      var self = this
-      self.slideshowMode = !self.slideshowMode
-      self.sections.forEach(function (section) {
+      this.slideshowMode = !this.slideshowMode
+      this.sections.forEach(function (section) {
         section.show = false
       })
-      if (self.slideshowMode === true) {
-        existingInterval = setInterval(function () {
-          self.pictureNext()
-        }, 8000)
-      } else {
-        window.clearInterval(existingInterval)
-        existingInterval = undefined
-      }
     },
     pictureNext: function () {
       if (this.currentPicture === this.pictures.length - 1) {

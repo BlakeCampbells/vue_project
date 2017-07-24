@@ -1,4 +1,4 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import App from 'src/App'
 
 describe('App.vue', () => {
@@ -41,12 +41,12 @@ describe('App.vue', () => {
     })
 
     it('Slideshow To exist', () => {
-      const Ctor = Vue.extend(App)
-      const vm = new Ctor().$mount()
-      console.dir('VM', vm.app)
+      // const Ctor = Vue.extend(App)
+      // const vm = new Ctor().$mount()
+      // console.dir('VM', vm.app)
       var slideshow = App.methods.slideshow
       expect(slideshow).to.be.a('function')
-      slideshow()
+      // slideshow()
     })
 
     it('Slideshow To exist', () => {
