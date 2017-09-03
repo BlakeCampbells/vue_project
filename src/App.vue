@@ -2,26 +2,7 @@
   <span>
     <div id="app">
       <div class="row">
-        <div class="switch col l2 m2 s2 offset-l10 offset-m10 offset-s10 white-text">
-          Slideshow Mode
-          <label>
-            <input type="checkbox" v-on:click="slideshow()" value="true">
-            <span class="lever"></span>
-          </label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="valign" v-show="slideshowMode == true">
-          <div class="col l2 m2 s2">
-            <i class="fa fa-arrow-circle-left fa-4x" aria-hidden="true" v-on:click="picturePrevious()"></i>
-          </div>
-          <div class="col l2 m2 s2 offset-l8 offset-m8 offset-s8">
-            <i class="fa fa-arrow-circle-right fa-4x" aria-hidden="true" v-on:click="pictureNext()"></i>
-          </div>
-        </div>
-      </div>
-      <div class="row" v-show="slideshowMode != true">
-        <div class="card blue-grey col l8 offset-l2 card_opacity">
+        <div class="card col l12 m12 no-padding no-margin header__card">
           <div class="card-content white-text">
             <div class="row">
               <img width="50" height="" class="avatar__image" :src="profile.avatar_url" alt=""/>
@@ -33,7 +14,7 @@
               type="submit"
               name="action"
               target="_blank"
-              :href="navbar[1].link"
+              :href="resume.link"
             >Resume
               <i class="material-icons right">file_download</i>
             </a>
@@ -70,12 +51,6 @@
       <span v-show="sections[1].show">
         <contact></contact>
       </span>
-      <span v-for="(picture, index) in pictures">
-        <img
-          :src="'/static/background_images/' + picture"
-          style="display: none"
-        >
-      </span>
     </div>
   </span>
 </template>
@@ -93,62 +68,26 @@ export default {
   data () {
     return {
       profile: '',
-      slideshowMode: false,
-      pictures: [
-        '001.JPG', '002.JPG', '003.JPG', '004.JPG', '005.JPG', '006.JPG',
-        '007.JPG', '008.JPG', '009.JPG', '010.JPG'
-      ],
-      currentPicture: 0,
+      resume: {
+        link: '/static/Blake_Campbell_resume.pdf'
+      },
       sections: [
         {
           name: 'Experience',
-          show: false
+          show: true
         }, {
           name: 'Contact',
-          show: false
-        }
-      ],
-      navbar: [
-        {
-          name: 'Code',
-          link: 'https://github.com/BlakeCampbells/vue_project'
-        }, {
-          name: 'Resume',
-          link: '/static/Blake_Campbell_resume.pdf'
+          show: true
         }
       ]
     }
   },
   created: function () {
-    console.log('Logging this', this)
     this.$http.get('https://api.github.com/users/BlakeCampbells').then(function (response) {
       this.profile = response.data
     })
   },
-  methods: {
-    slideshow: function () {
-      this.slideshowMode = !this.slideshowMode
-      this.sections.forEach(function (section) {
-        section.show = false
-      })
-    },
-    pictureNext: function () {
-      if (this.currentPicture === this.pictures.length - 1) {
-        this.currentPicture = -1
-      }
-      var image = this.pictures[this.currentPicture + 1]
-      this.currentPicture += 1
-      document.body.setAttribute('style', 'background-image: url(/static/background_images/' + image + ')')
-    },
-    picturePrevious: function () {
-      if (this.currentPicture === 0) {
-        this.currentPicture = this.pictures.length
-      }
-      var image = this.pictures[this.currentPicture - 1]
-      this.currentPicture -= 1
-      document.body.setAttribute('style', 'background-image: url(/static/background_images/' + image + ')')
-    }
-  }
+  methods: {}
 }
 </script>
 
@@ -160,11 +99,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: url('/static/background_images/001.JPG') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.no-padding {
+  padding: 0;
+}
+.no-margin {
+  margin: 0;
+}
+.header__card {
+  background: #5f2c82;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #49a09d, #5f2c82); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .fa-arrow-circle-left {
   background: white;
@@ -185,13 +134,6 @@ body {
   font-size: 2.1rem;
   padding-left: 20px;
   white-space: nowrap;
-}
-
-.card_opacity {
-  opacity: 0.5;
-}
-.card_opacity:hover {
-  opacity: 0.9;
 }
 .avatar__image {
   border-radius: 50%;

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <div class="col l6 s12 offset-l3">
-      <div class="card blue-grey darken-2 card_opacity">
+    <div class="col l13 s12 m12">
+      <div class="card blue-grey card_opacity">
         <div class="card-content">
           <div class="card-title">
             <h5 class="white-text">Contact</h5>
@@ -66,11 +66,5 @@ export default {
 <style scoped>
   .padding {
     padding: 2em;
-  }
-  .card_opacity {
-    opacity: 0.5;
-  }
-  .card_opacity:hover {
-    opacity: 0.9;
   }
 </style>
