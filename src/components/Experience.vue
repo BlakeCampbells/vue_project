@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div v-for="(item, index) in cards">
-      <div class="col s12 m4">
+      <div class="col s12 m6">
         <div class="card small hoverable" v-bind:class="'blue darken-'+((index%3)+2)">
           <div class="card-content">
             <span class="card-title activator white-text">
@@ -20,12 +20,12 @@
                 {{ tool }}
               </li>
             </ul>
-            <div class="card-action activator">
-              <i class="material-icons center card-title">keyboard_arrow_up</i>
+            <div class="card-action activator" v-bind:class="'blue darken-'+((index%3)+2)">
+              <i class="material-icons center card-title">keyboard_arrow_down</i>
             </div>
           </div>
-          <div class="card-action activator">
-            <i class="material-icons center">keyboard_arrow_down</i>
+          <div class="card-action activator white">
+            <i class="material-icons center">keyboard_arrow_up</i>
           </div>
         </div>
       </div>
