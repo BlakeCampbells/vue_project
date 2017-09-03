@@ -21,11 +21,11 @@
               </li>
             </ul>
             <div class="card-action activator" v-bind:class="'blue darken-'+((index%3)+2)">
-              <i class="material-icons center card-title">keyboard_arrow_up</i>
+              <i class="material-icons center card-title">keyboard_arrow_down</i>
             </div>
           </div>
           <div class="card-action activator white">
-            <i class="material-icons center">keyboard_arrow_down</i>
+            <i class="material-icons center">keyboard_arrow_up</i>
           </div>
         </div>
       </div>

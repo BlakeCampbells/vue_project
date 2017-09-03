@@ -2,8 +2,8 @@
   <span>
     <div id="app">
       <div class="row">
-        <div class="card col l12 m12 no-padding no-margin header__card">
-          <div class="card-content white-text">
+        <div class="card col l12 m12 no-padding no-margin header__card white">
+          <div class="card-content">
             <div class="row">
               <img width="50" height="" class="avatar__image" :src="profile.avatar_url" alt=""/>
             </div>
@@ -25,30 +25,37 @@
             </span>
           </div>
           <div class="row">
-            <div class="col s12 m6" v-for="(section, index) in sections">
-              <div class="card white hoverable">
-                <div class="card-content white-text">
-                  <div class="left-align">
-                    <span class="card-title">
-                      <input
-                        type="checkbox"
-                        :id="'sections_checkbox' + index"
-                        v-model="section.show"
-                        value="true"
-                      >
-                      <label :for="'sections_checkbox' + index">{{ section.name }}</label>
-                    </span>
+            <div class="col s12 m4" v-for="(section, index) in sections">
+              <div class="card hoverable white"  :for="'sections_checkbox' + index">
+                <label :for="'sections_checkbox' + index">
+                  <div class="card-content">
+                    <div class="left-align">
+                      <span class="card-title">
+                        <input
+                          type="checkbox"
+                          :id="'sections_checkbox' + index"
+                          v-model="section.show"
+                          value="true"
+                        >
+                        <label :for="'sections_checkbox' + index">
+                          <b>{{ section.name }}</b>
+                        </label>
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </label>
               </div>
             </div>
           </div>
         </div>
       </div>
       <span v-show="sections[0].show">
-        <experience></experience>
+        <about></about>
       </span>
       <span v-show="sections[1].show">
+        <experience></experience>
+      </span>
+      <span v-show="sections[2].show">
         <contact></contact>
       </span>
     </div>
@@ -56,12 +63,14 @@
 </template>
 
 <script>
+import About from './components/About'
 import Contact from './components/Contact'
 import Experience from './components/Experience'
 
 export default {
   name: 'App',
   components: {
+    About,
     Contact,
     Experience
   },
@@ -73,10 +82,13 @@ export default {
       },
       sections: [
         {
-          name: 'Experience',
+          name: 'ABOUT',
           show: true
         }, {
-          name: 'Contact',
+          name: 'EXPERIENCE',
+          show: true
+        }, {
+          name: 'CONTACT',
           show: true
         }
       ]
@@ -104,6 +116,33 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+/* label color */
+ .input-field label {
+   color: #0000ff;
+ }
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+   color: #0000ff;
+ }
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+   border-bottom: 1px solid #0000ff;
+   box-shadow: 0 1px 0 0 #0000ff;
+ }
+ /* valid color */
+ .input-field input[type=text].valid {
+   border-bottom: 1px solid #0000ff;
+   box-shadow: 0 1px 0 0 #0000ff;
+ }
+ /* invalid color */
+ .input-field input[type=text].invalid {
+   border-bottom: 1px solid #0000ff;
+   box-shadow: 0 1px 0 0 #0000ff;
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+   color: #000;
+ }
 .no-padding {
   padding: 0;
 }
@@ -111,9 +150,7 @@ body {
   margin: 0;
 }
 .header__card {
-  background: #5f2c82;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #49a09d, #5f2c82); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: $primary-color;
 }
 .fa-arrow-circle-left {
   background: white;

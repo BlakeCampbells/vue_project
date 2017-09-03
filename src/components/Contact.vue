@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <div class="col l13 s12 m12">
-      <div class="card blue-grey card_opacity">
+    <div class="col l6 m6 s12 offset-l3 offset-m3">
+      <div class="card blue darken-2">
         <div class="card-content">
           <div class="card-title">
             <h5 class="white-text">Contact</h5>
